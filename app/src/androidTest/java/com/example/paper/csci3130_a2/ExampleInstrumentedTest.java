@@ -23,4 +23,5 @@ public class ExampleInstrumentedTest {
 
         assertEquals("com.example.paper.csci3130_a2", appContext.getPackageName());
     }
+
 }
