@@ -18,10 +18,50 @@ public class ValidatorTest {
         assertEquals(0,results);
     }
 
-    //checking for less than 8 length input
+    //checking for shorter than 8 length input
     @Test
-    public void lengthErrorCheck() {
-        tests = "1234567";
+    public void shorterthan8() {
+        tests = "Bb1234";
+        results = valid.validChecking(tests);
+        assertEquals(0,results);
+    }
+
+    //checking for longer than 12 length input
+    @Test
+    public void longerthan12() {
+        tests = "Bb12345678910";
+        results = valid.validChecking(tests);
+        assertEquals(0,results);
+    }
+
+    //checking for no lowercase
+    @Test
+    public void lowerCaseCheck() {
+        tests = "B12345678";
+        results = valid.validChecking(tests);
+        assertEquals(0,results);
+    }
+
+    //checking for no upper case
+    @Test
+    public void upperCaseCheck() {
+        tests = "b12345678";
+        results = valid.validChecking(tests);
+        assertEquals(0,results);
+    }
+
+    //checking for no number
+    @Test
+    public void numberCheck() {
+        tests = "ABCDefgh";
+        results = valid.validChecking(tests);
+        assertEquals(0,results);
+    }
+
+    //checking for including whitespace
+    @Test
+    public void whitespaceCheck() {
+        tests = "Bb 1234567";
         results = valid.validChecking(tests);
         assertEquals(0,results);
     }
@@ -29,7 +69,7 @@ public class ValidatorTest {
     //checking for valid input
     @Test
     public void pwSucceed() {
-        tests = "12345678";
+        tests = "Bb123456";
         results = valid.validChecking(tests);
         assertEquals(1,results);
     }
