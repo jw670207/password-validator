@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">CSCI3130_A2</string>
+    <string name="app_name">Password Validator</string>
+    <string name="prompt">Please Enter 8-12 characters for password.\nIt should contain at least one of upper/lower alphabet and number without whitespace</string>
+
+    <string name="submitBT">Submit</string>
 </resources>
