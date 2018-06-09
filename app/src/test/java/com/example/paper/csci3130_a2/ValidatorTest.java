@@ -15,7 +15,7 @@ public class ValidatorTest {
     public void pwErrorCheck() {
         tests = "pasSwOrd";
         results = valid.validChecking(tests);
-        assertEquals(0,results);
+        assertEquals(2,results);
     }
 
     //checking for shorter than 8 length input
@@ -23,7 +23,7 @@ public class ValidatorTest {
     public void shorterthan8() {
         tests = "Bb1234";
         results = valid.validChecking(tests);
-        assertEquals(0,results);
+        assertEquals(1,results);
     }
 
     //checking for longer than 12 length input
@@ -31,7 +31,7 @@ public class ValidatorTest {
     public void longerthan12() {
         tests = "Bb12345678910";
         results = valid.validChecking(tests);
-        assertEquals(0,results);
+        assertEquals(3,results);
     }
 
     //checking for no lowercase
@@ -39,7 +39,7 @@ public class ValidatorTest {
     public void lowerCaseCheck() {
         tests = "B12345678";
         results = valid.validChecking(tests);
-        assertEquals(0,results);
+        assertEquals(4,results);
     }
 
     //checking for no upper case
@@ -47,7 +47,7 @@ public class ValidatorTest {
     public void upperCaseCheck() {
         tests = "b12345678";
         results = valid.validChecking(tests);
-        assertEquals(0,results);
+        assertEquals(4,results);
     }
 
     //checking for no number
@@ -55,7 +55,7 @@ public class ValidatorTest {
     public void numberCheck() {
         tests = "ABCDefgh";
         results = valid.validChecking(tests);
-        assertEquals(0,results);
+        assertEquals(4,results);
     }
 
     //checking for including whitespace
@@ -63,7 +63,7 @@ public class ValidatorTest {
     public void whitespaceCheck() {
         tests = "Bb 1234567";
         results = valid.validChecking(tests);
-        assertEquals(0,results);
+        assertEquals(5,results);
     }
 
     //checking for valid input
@@ -71,7 +71,7 @@ public class ValidatorTest {
     public void pwSucceed() {
         tests = "Bb123456";
         results = valid.validChecking(tests);
-        assertEquals(1,results);
+        assertEquals(0,results);
     }
 
 }
