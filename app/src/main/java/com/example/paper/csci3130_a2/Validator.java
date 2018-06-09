@@ -3,8 +3,8 @@
  * Make simple input interface, then check the unit test with Junit.
  *
  * @author Jaewoong Kang
- * @version 1.0
- * @since 2018-06-08
+ * @version 1.01
+ * @since 2018-06-09
  */
 
 package com.example.paper.csci3130_a2;
@@ -40,6 +40,24 @@ public class Validator extends Activity {
             return 0;
         }
         else if (passwords.equalsIgnoreCase("password")){
+            return 0;
+        }
+
+        //extra conditions in stage2
+
+        //(less than 13 length)
+        else if(passwords.length() > 12){
+            return 0;
+        }
+
+        //including at lease one of lower/upper case alphabet and number
+        else if (!passwords.matches("(.*[A-Z].*)") || !passwords.matches("(.*[a-z].*)") ||
+                !passwords.matches("(.*[0-9].*)")){
+            return 0;
+        }
+
+        //not including whitespace
+        else if (passwords.matches("(.*\\s.*)")){
             return 0;
         }
         return 1;
